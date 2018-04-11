@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from "react";
+import { View, Text } from "react-native";
 
 class AuthScreen extends Component {
   render() {
-    <View>
-      <Text>AuthScreen</Text>
-      <Text>AuthScreen</Text>
-      <Text>AuthScreen</Text>
-      <Text>AuthScreen</Text>
-      <Text>AuthScreen</Text>
-      <Text>AuthScreen</Text>
-    </View>
+    return (
+      <View>
+        <Text>AuthScreen</Text>
+        <Text>AuthScreen</Text>
+        <Text>AuthScreen</Text>
+        <Text>AuthScreen</Text>
+        <Text>AuthScreen</Text>
+        <Text>AuthScreen</Text>
+      </View>
+    );
   }
 }
 
