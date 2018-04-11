@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 
-class ReviewScreen extends Component {
+class SettingsScreen extends Component {
   render() {
     return (
       <View>
-        <Text>ReviewScreen</Text>
-        <Text>ReviewScreen</Text>
-        <Text>ReviewScreen</Text>
-        <Text>ReviewScreen</Text>
-        <Text>ReviewScreen</Text>
-        <Text>ReviewScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
+        <Text>SettingsScreen</Text>
       </View>
     );
   }
 }
 
-export default ReviewScreen;
+export default SettingsScreen;
