@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, AsyncStorage } from "react-native";
 import { connect } from 'react-redux';
-import { Provider } from 'react-redux';
+import { AppLoading } from 'expo';
+import _ from 'lodash';
 
 import store from '../store'
 import Slides from '../components/Slides';
@@ -13,11 +14,28 @@ const SLIDE_DATA = [
 ]
 
 class WelcomeScreen extends Component {
+  state= { token: null }
+
+  async componentWillMount() {
+    let token = await AsyncStorage.getItem('fb_token');
+
+    if (token) {
+      this.props.navigation.navigate('map')
+      this.setState({ token })
+    } else {
+      this.setState({ token: false })
+    }
+  }
+
   onSLidesComplete() {
     this.props.navigation.navigate('auth')
   }
 
   render() {
+    if (_.isNull(this.state.token)) {
+      return <AppLoading />
+    }
+
     return (
       <View style={styles.container}>       
         <Slides data={SLIDE_DATA} onComplete={this.onSLidesComplete.bind(this)} />
