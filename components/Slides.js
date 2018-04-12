@@ -6,7 +6,7 @@ class Slides extends Component {
     return this.props.data.map((slide) => {
       return (
         <View key={slide.text} style={styles.slideStyle}>
-          <Text styles={styles.textStyle}>{slide.text}</Text>
+          <Text style={styles.textStyle}>{slide.text}</Text>
         </View>
       )
     })
@@ -31,7 +31,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center'
   },
-  slideText: {
+  textStyle: {
     fontSize: 30
   }
 }
