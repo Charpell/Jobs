@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
+import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
+
+import store from '../store'
 import Slides from '../components/Slides';
 
 const SLIDE_DATA = [
