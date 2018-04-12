@@ -13,29 +13,32 @@ import DeckScreen from "./screens/DeckScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import ReviewScreen from "./screens/ReviewScreen";
 
-const AppNavigator = TabNavigator({
-  welcome: { screen: WelcomeScreen },
-  auth: { screen: AuthScreen },
-  main: {
-    screen: TabNavigator({
-      map : { screen: MapScreen },
-      deck: { screen: DeckScreen },
-      review: {
-        screen: StackNavigator({
-          review: { screen: ReviewScreen },
-          settings: { screen: SettingsScreen }
-        })
-      }
 
-    })
-  }
-},
-{
-  lazy: true
-});
 
 export default class App extends React.Component {
   render() {   
+
+    const AppNavigator = TabNavigator({
+      welcome: { screen: WelcomeScreen },
+      auth: { screen: AuthScreen },
+      main: {
+        screen: TabNavigator({
+          map : { screen: MapScreen },
+          deck: { screen: DeckScreen },
+          review: {
+            screen: StackNavigator({
+              review: { screen: ReviewScreen },
+              settings: { screen: SettingsScreen }
+            })
+          }    
+        })
+      }  
+    }, {
+      navigationOptions: {
+        tabBarVisible: false
+      }
+    });
+
     return (
       <Provider store={store}>
         <AppNavigator />
@@ -52,21 +55,3 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
-
-// export default TabNavigator({
-//   welcome: { screen: WelcomeScreen },
-//   auth: { screen: AuthScreen },
-//   main: {
-//     screen: TabNavigator({
-//       map : { screen: MapScreen },
-//       deck: { screen: DeckScreen },
-//       review: {
-//         screen: StackNavigator({
-//           review: { screen: ReviewScreen },
-//           settings: { screen: SettingsScreen }
-//         })
-//       }
-
-//     })
-//   }
-// });
