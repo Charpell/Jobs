@@ -3,7 +3,9 @@ console.ignoredYellowBox = ['Remote debugger'];
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TabNavigator, StackNavigator } from "react-navigation";
+import { Provider } from 'react-redux';
 
+import store from './store'
 import AuthScreen from "./screens/AuthScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
 import MapScreen from "./screens/MapScreen";
@@ -14,9 +16,11 @@ import ReviewScreen from "./screens/ReviewScreen";
 export class App extends React.Component {
   render() {   
     return (
-      <View style={styles.container}>
+      <Provider store={store}>
+        <View style={styles.container}>
 
-      </View>
+        </View>
+      </Provider>
     );
   }
 }
