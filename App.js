@@ -1,4 +1,5 @@
 // import Expo from "expo";
+console.ignoredYellowBox = ['Remote debugger'];
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TabNavigator, StackNavigator } from "react-navigation";
